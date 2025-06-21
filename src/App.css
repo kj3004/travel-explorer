@@ -1,0 +1,30 @@
+/* Keep only these Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional custom styles - add only if needed */
+@layer components {
+  .logo {
+    @apply h-24 p-6 transition-all duration-300;
+  }
+  .logo:hover {
+    @apply drop-shadow-lg;
+  }
+  .logo.react:hover {
+    @apply drop-shadow-[0_0_2em_#61dafbaa];
+  }
+}
+
+/* Optional animations */
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  .spin-animation {
+    animation: logo-spin infinite 20s linear;
+  }
+}
