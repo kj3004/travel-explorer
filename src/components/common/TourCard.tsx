@@ -1,7 +1,7 @@
 import React from "react";
-import type { Tour } from "../../assets/data/tours";
-import Button from "./Button";
+import { Link } from "react-router-dom"; // Add this import
 import { StarIcon } from "@heroicons/react/20/solid";
+import type { Tour } from "../../assets/data/tours";
 
 interface TourCardProps {
   tour: Tour;
@@ -15,7 +15,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, className }) => {
     >
       <div className="relative h-48 overflow-hidden">
         <img
-          src={tour.image}
+          src={tour.image[0]}
           alt={tour.title}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
@@ -42,9 +42,13 @@ const TourCard: React.FC<TourCardProps> = ({ tour, className }) => {
             <span className="text-gray-500 text-sm">From</span>
             <p className="text-teal-600 font-bold">${tour.price}</p>
           </div>
-          <Button variant="primary" size="sm">
+          {/* Updated Button with Link */}
+          <Link
+            to={`/tours/${tour.id}`}
+            className="bg-primary hover:bg-teal-700 text-black px-4 py-2 rounded-lg text-sm font-medium transition"
+          >
             View Tour
-          </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -30,7 +30,7 @@ const TourDetailPage: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          <TourGallery images={[tour.image, tour.image, tour.image]} />
+          <TourGallery images={tour.image} />
 
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
             <h2 className="text-xl font-bold mb-4">Tour Highlights</h2>

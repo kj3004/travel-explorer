@@ -14,10 +14,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "Destinations", path: "/destinations" },
     { name: "Tours", path: "/tours" },
-    { name: "Hotels", path: "/hotels" },
-    { name: "Experiences", path: "/experiences" },
     { name: "Blog", path: "/blog" },
-    { name: "Offers", path: "/offers" },
     { name: "About Us", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
