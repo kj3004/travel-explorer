@@ -1,6 +1,8 @@
 import React from "react";
 import SectionHeader from "../common/SectionHeader";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import happyTravelersImg from "../../assets/images/WhyChooseUs.png";
+
 
 interface Benefit {
   id: number;
@@ -39,7 +41,7 @@ const WhyChooseUs: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           <div className="lg:w-1/2">
             <img
-              src="/images/why-choose-us.jpg"
+              src={happyTravelersImg}
               alt="Happy travelers"
               className="rounded-xl shadow-lg w-full"
             />

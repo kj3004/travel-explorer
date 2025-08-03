@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import mainVideo from "../../assets/videos/main.mp4"; // Make sure path is correct
 
 interface HeroSectionProps {
   title?: string;
@@ -15,10 +16,24 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   secondaryButtonText = "Contact Us",
 }) => {
   return (
-    <section className="relative h-screen flex items-center justify-center bg-gray-900 text-white">
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+    <section className="relative h-screen flex items-center justify-center text-white overflow-hidden">
+      {/* 🔁 Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src={mainVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      <div className="container mx-auto px-4 z-10 text-center">
+      {/* 🔳 Overlay for dimming the video */}
+      <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
+
+      {/* 📄 Content */}
+      <div className="z-10 text-center px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">{title}</h1>
         <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">{subtitle}</p>
         <div className="flex flex-wrap justify-center gap-4">
